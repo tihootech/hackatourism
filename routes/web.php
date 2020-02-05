@@ -8,3 +8,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // artisans
 Route::resource('artisan', 'ArtisanController')->except('show');
+
+// list text messages
+Route::get('text-messages', 'TextMessageController@index')->name('message.index');

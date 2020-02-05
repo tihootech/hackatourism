@@ -58,11 +58,11 @@
 								<td>
                                     <span data-toggle="popover" data-trigger="hover" data-placement="top" data-html="true"
                                         data-content='@include('includes.sms_ul')'>
-                                        {{$sms->persian_type()}}
+                                        {{$sms->template}}
                                     </span>
                                 </td>
 								<td> {{$sms->receptor ?? '-'}} </td>
-                                <td> @include('dashboard.partials.yesno', ['boolean' => $sms->sent]) </td>
+                                <td> {{$sms->sent ? __('yes') : __('no')}} </td>
 								<td> {{$sms->sender ?? '-'}} </td>
 								<td> {{$sms->cost ? rial($sms->cost) : '-'}} </td>
 								<td> {{$sms->status ?? '-'}} </td>

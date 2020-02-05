@@ -11,7 +11,6 @@ use Kavenegar\Exceptions\HttpException;
 
 class TextMessageController extends Controller
 {
-    const FORMAT = "%s = %s <br/>";
 
     public function __construct()
     {

@@ -5,7 +5,7 @@
 @section('content')
 
     <div class="tile">
-        Dashboard
+        @lang('dashboard')
     </div>
 
 @endsection
