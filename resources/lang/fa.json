@@ -4,6 +4,10 @@
 	"Account Login":"ورود به حساب کاربری",
 	"Sign in":"ورود",
 	"Forgot password?":"رمزعبور خود را فراموش کردید؟",
+	"Username is required":"نام کاربری الزامی است.",
+	"Password is required":"رمزعبور الزامی است",
+	"These credentials do not match our records":" نام کاربری یا رمز عبور صحیح نیست. ",
+	"":"",
 	"":"",
 	"":""
 }

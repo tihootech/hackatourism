@@ -374,14 +374,14 @@ input.input100 {
 	background-color: #fff;
 	border: 1px solid #c80000;
 	border-radius: 2px;
-	padding: 4px 25px 4px 10px;
+	padding: 4px 10px 4px 25px;
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	-moz-transform: translateY(-50%);
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
-	right: 12px;
+	left: 12px;
 	pointer-events: none;
 
 	color: #c80000;
@@ -412,7 +412,7 @@ input.input100 {
 	-ms-transform: translateY(-50%);
 	-o-transform: translateY(-50%);
 	transform: translateY(-50%);
-	right: 18px;
+	left: 18px;
 }
 
 .alert-validate:hover:before {
@@ -444,4 +444,9 @@ input.input100 {
 	.wrap-input100.rs2 {
 		border-top-left-radius: 0px;
 	}
+}
+
+.custom-control-label::before, .custom-control-label::after {
+	left: unset;
+	right: 0;
 }
