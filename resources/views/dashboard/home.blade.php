@@ -1,9 +1,11 @@
 @extends('layouts.dashboard')
 @section('title')
-    داشبورد
+    @lang('dashboard')
 @endsection
 @section('content')
 
-    Dashboard
+    <div class="tile">
+        Dashboard
+    </div>
 
 @endsection

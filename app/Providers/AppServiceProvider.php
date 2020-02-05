@@ -13,7 +13,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        \Blade::if('master', function () {
+            return isMaster();
+        });
     }
 
     /**

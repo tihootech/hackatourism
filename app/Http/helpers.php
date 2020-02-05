@@ -5,7 +5,7 @@ function user($p=null)
     return auth()->user() ? ( $p ? auth()->user()->$p : auth()->user() ) : null;
 }
 
-function master()
+function isMaster()
 {
     $user = user();
     return $user && $user->type == 'master';
@@ -16,7 +16,7 @@ function rn()
     return request()->route()->getName();
 }
 
-function rs($length = 10) {
+function randomString($length = 10) {
     return substr(str_shuffle(str_repeat($x='123456789ABCDEFGHJKLMNPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
 }
 
@@ -28,7 +28,7 @@ function short($string, $n=100)
 
 function upload($new_file, $old_file=null)
 {
-    delete_file($old_file);
+    deleteFile($old_file);
     if ($new_file) {
         $relarive_path = "storage/app/public";
         $file_name = random_sha(20) . '.' . $new_file->getClientOriginalExtension();
@@ -39,7 +39,7 @@ function upload($new_file, $old_file=null)
     }
 }
 
-function delete_file($income)
+function deleteFile($income)
 {
     $files = is_array($income) ? $income : [$income];
     foreach ($files as $file) {
@@ -49,17 +49,11 @@ function delete_file($income)
     }
 }
 
-function random_sha($l=10)
+function randomSha($l=10)
 {
 	return substr(md5(rand()), 0, $l);
 }
 
-
-function random_rgba($opacity=null)
-{
-    $opacity = $opacity ?? rand(0,10)/10;
-    return "rgba(".rand(1,255).", ".rand(1,255).", ".rand(1,255).", $opacity)";
-}
 
 function urf($input){
     return str_replace(' ', '-', $input);
@@ -69,18 +63,18 @@ function raw($input){
     return str_replace('-', ' ', $input);
 }
 
-function class_name($string)
+function className($string)
 {
     $class = str_replace('_', '', ucwords($string, '_'));;
     return "App\\$class";
 }
 
-function remove_class_name($string)
+function removeClassName($string)
 {
     return str_replace('app\\', '', strtolower($string));;
 }
 
-function prepare_multiple($inputs)
+function prepareMultiple($inputs)
 {
     $result = [];
     foreach ($inputs as $key => $array) {
@@ -94,7 +88,7 @@ function prepare_multiple($inputs)
 }
 
 
-function human_time($tatal_seconds, $display_seconds=true)
+function humanTime($tatal_seconds, $display_seconds=true)
 {
     $seconds = $tatal_seconds % 60;
     $minutes = floor($tatal_seconds / 60);
@@ -118,7 +112,7 @@ function nf($value)
     return $value ? number_format($value) : 'صفر';
 }
 
-function pretty_phone($phone)
+function prettyPhone($phone)
 {
     return substr($phone,0,4) . ' ' . substr($phone,4,3) . ' ' . substr($phone,7,4);
 }

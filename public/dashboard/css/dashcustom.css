@@ -28,6 +28,17 @@
 
 
 /*******************************/
+/* Customize */
+/*******************************/
+
+.material-icons.icon, .btn .material-icons  {
+	position: relative;
+	top: 3px;
+	font-size: 16px;
+	margin-left: 3px;
+}
+
+/*******************************/
 /* RTL */
 /*******************************/
 .custom-control-label::before, .custom-control-label::after {

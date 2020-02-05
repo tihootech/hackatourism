@@ -37,9 +37,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // ==== change laravel default username
-    public function username()
+    // ==== new artisan account
+    public static function newArtisan($username, $password)
     {
-        return 'name';
+        $user = new self;
+        $user->name = $username;
+        $user->password = bcrypt($password);
+        $user->type = 'artisan';
+        $user->save();
+        return $user;
     }
 }

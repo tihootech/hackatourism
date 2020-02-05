@@ -9,10 +9,11 @@
         </div>
     </div>
     <ul class="app-menu">
+
         <li>
             <a class="app-menu__item @if(rn() == 'home') active @endif" href="{{route('home')}}">
                 <i class="ml-2 material-icons">dashboard</i>
-                <span class="app-menu__label"> داشبورد </span>
+                <span class="app-menu__label"> @lang('dashboard') </span>
             </a>
         </li>
 
