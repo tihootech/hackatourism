@@ -1,0 +1,51 @@
+/*******************************/
+/* Fonts */
+/*******************************/
+
+.yekan {
+	font-family: 'Yekan' !important;
+}
+
+.dinar {
+	font-family: 'Dinar' !important;
+}
+
+.calibri {
+	font-family: 'Calibri' !important;
+}
+
+/*******************************/
+/* Main */
+/*******************************/
+
+.popover, ::placeholder {
+	font-family: 'Yekan', 'Dinar', 'Calibri';
+}
+
+.hidden {
+	display: none;
+}
+
+
+/*******************************/
+/* RTL */
+/*******************************/
+.custom-control-label::before, .custom-control-label::after {
+	left: unset;
+}
+
+.custom-control-label > span {
+	padding-right: 25px;
+}
+
+.page-item:first-child .page-link {
+	border-radius: 0;
+	border-top-right-radius: 0.25rem;
+	border-bottom-right-radius: 0.25rem;
+}
+
+.page-item:last-child .page-link {
+	border-radius: 0;
+	border-top-left-radius: 0.25rem;
+	border-bottom-left-radius: 0.25rem;
+}

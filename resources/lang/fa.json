@@ -7,7 +7,8 @@
 	"Username is required":"نام کاربری الزامی است.",
 	"Password is required":"رمزعبور الزامی است",
 	"These credentials do not match our records":" نام کاربری یا رمز عبور صحیح نیست. ",
-	"":"",
+	"Access Level":"سطح دسترسی",
+	"artisan":"صنعتگر",
 	"":"",
 	"":""
 }
