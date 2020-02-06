@@ -34,7 +34,9 @@
 
 	//inits
     $('[title]').tooltip();
-    $('[data-toggle="popover"]').popover();
+    $('[data-toggle="popover"]').popover({
+		placement: 'top'
+	});
 	$('.pdp').persianDatepicker();
 	$('.select2').select2({
        width: '100%',

@@ -5,10 +5,21 @@ function user($p=null)
     return auth()->user() ? ( $p ? auth()->user()->$p : auth()->user() ) : null;
 }
 
+function currentArtisan($p=null)
+{
+    return isArtisan() ? ( $p ? user('owner')->$p : user('owner') ) : null;
+}
+
 function isMaster()
 {
     $user = user();
     return $user && $user->type == 'master';
+}
+
+function isArtisan()
+{
+    $user = user();
+    return $user && $user->type == 'artisan';
 }
 
 function rn()
@@ -31,7 +42,7 @@ function upload($new_file, $old_file=null)
     deleteFile($old_file);
     if ($new_file) {
         $relarive_path = "storage/app/public";
-        $file_name = random_sha(20) . '.' . $new_file->getClientOriginalExtension();
+        $file_name = randomString(20) . '.' . $new_file->getClientOriginalExtension();
         $result = $new_file->move(base_path($relarive_path),$file_name);
         return 'storage/' . $file_name;
     }else {

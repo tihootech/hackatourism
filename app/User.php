@@ -47,4 +47,9 @@ class User extends Authenticatable
         $user->save();
         return $user;
     }
+
+    public function owner()
+    {
+        return $this->hasOne(className($this->type), 'user_id');
+    }
 }

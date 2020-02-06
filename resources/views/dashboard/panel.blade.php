@@ -14,3 +14,12 @@
 </li>
 
 @endmaster
+
+@artisan
+<li>
+	<a class="app-menu__item @if(rn() == 'product.index') active @endif" href="{{route('product.index')}}">
+		<i class="ml-2 material-icons">storefront</i>
+		<span class="app-menu__label"> @lang('products') </span>
+	</a>
+</li>
+@endartisan

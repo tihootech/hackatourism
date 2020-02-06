@@ -16,6 +16,12 @@ class AppServiceProvider extends ServiceProvider
         \Blade::if('master', function () {
             return isMaster();
         });
+        \Blade::if('artisan', function () {
+            return isArtisan() || isMaster();
+        });
+        \Blade::if('onlyartisan', function () {
+            return isArtisan();
+        });
     }
 
     /**

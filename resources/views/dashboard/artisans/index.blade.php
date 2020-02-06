@@ -28,30 +28,35 @@
                     </thead>
                     <tbody>
                         @foreach ($artisans as $i => $artisan)
-                            <th scope="row"> {{$i+1}} </th>
-                            <td> {{$artisan->full_name}} </td>
-                            <td> {{$artisan->mobile}} </td>
-                            <td> {{$artisan->city}} </td>
-                            <td> {{$artisan->activity}} </td>
-                            <td> {{short($artisan->address)}} </td>
-                            <td> {{$artisan->active ? __('yes') : __('no')}} </td>
-                            <td>
-                                <a href="{{route('artisan.edit', $artisan->id)}}" class="btn btn-outline-success btn-sm">
-                                    <i class="material-icons mr-1">edit</i>
-                                </a>
-                            </td>
-                            <td>
-                                <form class="d-inline" action="{{route('artisan.destroy', $artisan->id)}}" method="post">
-                                    @csrf
-                                    @method('delete')
-                                    <button type="button" class="btn btn-outline-danger btn-sm delete">
-                                        <i class="material-icons mr-1">delete</i>
-                                    </button>
-                                </form>
-                            </td>
+                            <tr>
+                                <th scope="row"> {{$i+1}} </th>
+                                <td> {{$artisan->full_name}} </td>
+                                <td> {{$artisan->mobile}} </td>
+                                <td> {{$artisan->city}} </td>
+                                <td> {{$artisan->activity}} </td>
+                                <td> {{short($artisan->address)}} </td>
+                                <td> {{$artisan->active ? __('yes') : __('no')}} </td>
+                                <td>
+                                    <a href="{{route('artisan.edit', $artisan->id)}}" class="btn btn-outline-success btn-sm"
+                                        data-toggle="popover" data-content="@lang('edit')" data-trigger="hover">
+                                        <i class="material-icons mr-1">edit</i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <form class="d-inline" action="{{route('artisan.destroy', $artisan->id)}}" method="post">
+                                        @csrf
+                                        @method('delete')
+                                        <button type="button" class="btn btn-outline-danger btn-sm delete"
+                                        data-toggle="popover" data-content="@lang('delete')" data-trigger="hover">
+                                            <i class="material-icons mr-1">delete</i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
                         @endforeach
                     </tbody>
                 </table>
+                {{$artisans->links()}}
             </div>
 
 		@else
