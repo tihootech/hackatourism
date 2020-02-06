@@ -23,7 +23,7 @@ class Artisan extends Model
 
     public function getActivityAttribute()
     {
-        return $this->activity_type == 1 ? __('handcroft') : __('souvenirs');
+        return $this->activity_type == 1 ? __('handcraft') : __('souvenirs');
     }
 
     public function city_instance()

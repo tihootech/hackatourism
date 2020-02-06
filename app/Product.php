@@ -19,6 +19,11 @@ class Product extends Model
 		return $this->morphMany(Image::class, 'owner');
 	}
 
+    public function main_image()
+    {
+        return $this->morphOne(Image::class, 'owner');
+    }
+
     public function artisan()
     {
         return $this->belongsTo(Artisan::class);
@@ -26,12 +31,14 @@ class Product extends Model
 
     public function uploadAndStoreNewImages($images)
     {
-        foreach ($images as $image_from_request) {
-            $image = new Image;
-            $image->owner_type = self::class;
-            $image->owner_id = $this->id;
-            $image->path = upload($image_from_request);
-            $image->save();
+        if (is_array($images)) {
+            foreach ($images as $image_from_request) {
+                $image = new Image;
+                $image->owner_type = self::class;
+                $image->owner_id = $this->id;
+                $image->path = upload($image_from_request);
+                $image->save();
+            }
         }
     }
 }
