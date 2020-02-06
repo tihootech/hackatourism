@@ -1,6 +1,6 @@
 @extends('layouts.dashboard')
 @section('title')
-    لیست همکاران
+    لیست پیامک ها
 @endsection
 @section('content')
 
