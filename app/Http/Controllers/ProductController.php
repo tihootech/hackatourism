@@ -47,7 +47,7 @@ class ProductController extends Controller
         $data['artisan_id'] = currentArtisan('id'); // id of current logged in artisan
         $product = Product::create($data);
 
-        // upload and store new images
+        // ==== upload and store new images
         $product->uploadAndStoreNewImages($request->images);
 
         // ==== redirect after process

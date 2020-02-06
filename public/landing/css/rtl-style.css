@@ -1,0 +1,44 @@
+body {
+	text-align: right;
+}
+
+header {
+	direction: rtl;
+}
+
+.header-top .ht-right .login-panel i {
+	margin-right: unset;
+	margin-left: 8px;
+}
+
+.ht-right .lan-selector .ddcommon .ddTitle .ddTitleText img {
+	padding-right: unset;
+	padding-left: 5px;
+}
+
+.ht-right .lan-selector .ddcommon .ddTitle .ddArrow:before {
+	float: left;
+}
+
+.header-top .ht-left .phone-service i, .header-top .ht-left .mail-service i {
+	margin-right: unset;
+	margin-left: 5px;
+}
+
+.inner-header .advanced-search .input-group input {
+	padding-left : unset;
+	padding-right : 20px;
+}
+
+.filter-control ul {
+	direction: rtl;
+}
+
+.filter-control ul li {
+	margin-right: unset;
+	margin-left: 22px;
+}
+
+.footer-section {
+	direction: rtl;
+}
