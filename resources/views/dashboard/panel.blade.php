@@ -23,3 +23,18 @@
 	</a>
 </li>
 @endartisan
+
+@customer
+	<li>
+		<a class="app-menu__item" href="#">
+			<i class="ml-2 material-icons">list</i>
+			<span class="app-menu__label"> @lang('orders list') </span>
+		</a>
+	</li>
+	<li>
+		<a class="app-menu__item" href="#">
+			<i class="ml-2 material-icons">card_giftcard</i>
+			<span class="app-menu__label"> باشگاه مشتریان </span>
+		</a>
+	</li>
+@endcustomer

@@ -39,6 +39,10 @@ header {
 	margin-left: 22px;
 }
 
+.latest-blog {
+	direction: rtl;
+}
+
 .footer-section {
 	direction: rtl;
 }

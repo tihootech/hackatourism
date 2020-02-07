@@ -13,7 +13,27 @@ class CitiesAndStates extends Migration
      */
      public function up()
      {
-         \DB::unprepared(file_get_contents('database/raws/cities.sql'));
+         Schema::create('cities', function (Blueprint $table) {
+             $table->bigIncrements('id');
+             $table->string('name');
+         });
+
+         \DB::table('cities')->insert([
+             ['name' => 'کرمانشاه'],
+             ['name' => 'اسلام آباد غرب'],
+             ['name' => 'جوانرود'],
+             ['name' => 'کنگاور'],
+             ['name' => 'سرپل ذهاب'],
+             ['name' => 'سنقر'],
+             ['name' => 'هرسین'],
+             ['name' => 'صحنه'],
+             ['name' => 'پاوه'],
+             ['name' => 'روانسر'],
+             ['name' => 'گیلانغرب'],
+             ['name' => 'روانسر'],
+             ['name' => 'قصر شیرین'],
+             ['name' => 'تازه‌آباد'],
+         ]);
      }
      /**
       * Reverse the migrations.

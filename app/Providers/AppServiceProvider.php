@@ -16,6 +16,9 @@ class AppServiceProvider extends ServiceProvider
         \Blade::if('master', function () {
             return isMaster();
         });
+        \Blade::if('customer', function () {
+            return isCustomer();
+        });
         \Blade::if('artisan', function () {
             return isArtisan() || isMaster();
         });

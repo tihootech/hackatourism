@@ -22,6 +22,12 @@ function isArtisan()
     return $user && $user->type == 'artisan';
 }
 
+function isCustomer()
+{
+    $user = user();
+    return $user && $user->type == 'customer';
+}
+
 function rn()
 {
     return request()->route()->getName();
