@@ -74,41 +74,47 @@
                             <li>@lang('category') 4</li>
                         </ul>
                     </div>
-                    <div class="product-slider owl-carousel">
+                    @if ($products->count())
+                        <div class="product-slider owl-carousel">
 
-                        @foreach ($products as $product)
-                            <div class="product-item">
-                                <div class="pi-pic">
-                                    @if ($product->main_image)
-                                        <img src="{{asset($product->main_image->path)}}" alt="{{$product->title}}">
-                                    @endif
-                                    @if ($product->discount)
-                                        <div class="sale">{{$product->discount}}% @lang('discount')</div>
-                                    @endif
-                                    <div class="icon">
-                                        <i class="icon_heart_alt"></i>
-                                    </div>
-                                    <ul>
-                                        <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                                        <li class="quick-view"><a href="#">+ @lang('view')</a></li>
-                                        <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="pi-text">
-                                    <a href="#">
-                                        <h5>{{$product->title}}</h5>
-                                    </a>
-                                    <div class="product-price">
-                                        @if ($product->discount)
-                                            <span>{{nf($product->price)}}</span>
+                            @foreach ($products as $product)
+                                <div class="product-item">
+                                    <div class="pi-pic">
+                                        @if ($product->main_image)
+                                            <img src="{{asset($product->main_image->path)}}" alt="{{$product->title}}">
                                         @endif
-                                        {{nf($product->cost)}}
+                                        @if ($product->discount)
+                                            <div class="sale">{{$product->discount}}% @lang('discount')</div>
+                                        @endif
+                                        <div class="icon">
+                                            <i class="icon_heart_alt"></i>
+                                        </div>
+                                        <ul>
+                                            <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                                            <li class="quick-view"><a href="#">+ @lang('view')</a></li>
+                                            <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="pi-text">
+                                        <a href="#">
+                                            <h5>{{$product->title}}</h5>
+                                        </a>
+                                        <div class="product-price">
+                                            @if ($product->discount)
+                                                <span>{{nf($product->price)}}</span>
+                                            @endif
+                                            {{nf($product->cost)}}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
 
-                    </div>
+                        </div>
+                    @else
+                        <div class="alert alert-warning">
+                            محصولی در سیستم ثبت نشده است
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>
